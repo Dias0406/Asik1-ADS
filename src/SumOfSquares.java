@@ -1,14 +1,20 @@
+import java.util.Scanner;
+
 public class SumOfSquares {
-    public static void main(String[] args) {
-        int n = 4;
-        int result = SumOfSquares(n);
-        System.out.println("Input: n = " + n);
-        System.out.println("Output: " + result);
-    }
-    public static int SumOfSquares(int n) {
-        if (n<=1) {
-            return 1;
+    public static int square(int n) {
+        if (n <= 1) {
+            return n * n;
         }
-        return (n*n) + SumOfSquares(n-1);
+        return (n * n) + square(n - 1);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int result = square(n);
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i + "^2" + (i < n ? " + " : " "));
+        }
+        System.out.println("= " + result);
     }
 }
