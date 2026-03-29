@@ -1,15 +1,18 @@
 public class SumOfFirstNElements {
-    public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5};
-        int n = 5;
-        int result = sumOfElements(array, n);
-        System.out.println("Input: n = " + n);
-        System.out.println("Output: " + result);
-    }
-    public static int sumOfElements(int[] arr, int n) {
-        if (n <= 1) {
-            return arr[0];
+
+    public static int sumArray(int[] arr, int n) {
+        if (n <= 0) {
+            return 0;
         }
-        return arr[n - 1] + sumOfElements(arr, n - 1);
+        return arr[n - 1] + sumArray(arr, n - 1);
+    }
+
+    public static void main(String[] args) {
+        int[] myArray = {5, 10, 15, 20};
+        int n = 3;
+        int result = sumArray(myArray, n);
+
+        System.out.println("Array: {5, 10, 15, 20}");
+        System.out.println("Sum of the first " + n + " elements: " + result);
     }
 }
