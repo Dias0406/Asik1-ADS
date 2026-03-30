@@ -2,7 +2,11 @@ import java.util.Scanner;
 
 public class SumOfFirstNElements {
     public static int sumArray(int[] arr, int n) {
-        return (n <= 0) ? 0 : arr[n - 1] + sumArray(arr, n - 1);
+        if (n <= 0) {
+            return 0;
+        } else {
+            return arr[n - 1] + sumArray(arr, n - 1);
+        }
     }
 
     public static void main(String[] args) {
