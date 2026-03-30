@@ -14,7 +14,7 @@ public class Task10 {
     public static boolean isPowerOfTwo(int n) {
 
         if (n <= 0) return false;
-        if (n == 1) return true; // Base case: 2^0 = 1
+        if (n == 1) return true;
 
         if (n % 2 != 0) return false;
 
